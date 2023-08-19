@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Place(models.Model):
+    name                = models.CharField( max_length=500)
     public_toilet       = models.BooleanField("pub")
     very_steep = models.BooleanField("pub")
     priority_parking    = models.BooleanField("pub")
@@ -14,3 +15,4 @@ class Place(models.Model):
 class Rating():
      Place = models.ForeignKey(Place)
      rating = models.FloatField(min=0.0, max=5.0)
+
